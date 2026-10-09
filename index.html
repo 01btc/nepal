@@ -16,7 +16,7 @@
             background-color: #1a1a1a;
             overflow-x: hidden;
         }
-        /* תמונת הרקע הקבועה המדויקת */
+        /* תמונת הרקע הקבועה */
         .hero-bg {
             position: fixed;
             top: 0;
@@ -25,7 +25,7 @@
             height: 100vh;
             background: url('image_77afbe.jpg') no-repeat center center fixed;
             background-size: cover;
-            filter: brightness(0.4); 
+            filter: brightness(0.55); /* הבהרה קלה כדי לראות את פרטי השולחן ברקע */
             z-index: -1;
         }
         header {
@@ -33,8 +33,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 40px;
-            background: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(5px);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
             position: fixed;
             top: 0;
             width: 100%;
@@ -57,39 +57,43 @@
         }
         .main-container {
             max-width: 850px;
-            margin: 150px auto 60px auto;
+            margin: 160px auto 60px auto;
             padding: 20px;
             text-align: center;
             position: relative;
             z-index: 10;
         }
+        /* כרטיס שקוף למחצה שנותן לרקע לנשום ולא חוסם */
         .card {
-            background: rgba(15, 15, 15, 0.75);
-            backdrop-filter: blur(8px);
-            border-radius: 16px;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 20px;
             padding: 50px 30px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         .profile-img {
-            width: 160px;
-            height: 160px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid #ffcc00;
             margin-bottom: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
         }
         h1 {
             font-size: 38px;
             margin-bottom: 15px;
             color: #ffcc00;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
         }
         p {
             font-size: 18px;
             line-height: 1.7;
             margin-bottom: 30px;
-            color: #eaeaea;
+            color: #f1f1f1;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
         }
         .cta-btn {
             display: inline-block;
@@ -101,9 +105,7 @@
             text-decoration: none;
             font-size: 18px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
-            position: relative;
-            z-index: 20;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
             cursor: pointer;
         }
         .cta-btn:hover {
@@ -115,7 +117,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            background: rgba(10, 10, 10, 0.95);
+            background: rgba(10, 10, 10, 0.9);
             color: #ccc;
             padding: 12px 20px;
             text-align: center;
@@ -146,7 +148,7 @@
 
     <div class="main-container">
         <div class="card">
-            <!-- שים לב: אם תמונת הילדה נקראת בשם אחר ב-GitHub, החלף כאן את girl.jpg לשם המדויק שלה -->
+            <!-- אם שם קובץ תמונת הילדה שונה אצלך ב-GitHub, עדכן כאן את השם (למשל girl.jpg או השם המדויק) -->
             <img src="girl.jpg" alt="ילדה בנפאל" class="profile-img">
             
             <h1>המסע הבא שלך לגג העולם</h1>
