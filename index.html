@@ -1,3 +1,4 @@
+HTML
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -13,32 +14,22 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             color: #fff;
-            background-color: #1a1a1a;
-            overflow-x: hidden;
-        }
-        /* תמונת הרקע הקבועה */
-        .hero-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: url('image_77afbe.jpg') no-repeat center center fixed;
+            /* הרקע מוגדר ישירות על הגוף עם כיסוי כהה עדין, בלי שכבות חוסמות */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image_77afbe.jpg') no-repeat center center fixed;
             background-size: cover;
-            filter: brightness(0.55); /* הבהרה קלה כדי לראות את פרטי השולחן ברקע */
-            z-index: -1;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 40px;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(8px);
+            background: rgba(0, 0, 0, 0.75);
             position: fixed;
             top: 0;
             width: 100%;
-            z-index: 100;
+            z-index: 1000;
         }
         .logo {
             font-size: 24px;
@@ -56,21 +47,18 @@
             color: #ffcc00;
         }
         .main-container {
-            max-width: 850px;
-            margin: 160px auto 60px auto;
+            max-width: 800px;
+            margin: 160px auto 80px auto;
             padding: 20px;
             text-align: center;
-            position: relative;
-            z-index: 10;
         }
-        /* כרטיס שקוף למחצה שנותן לרקע לנשום ולא חוסם */
         .card {
-            background: rgba(0, 0, 0, 0.45);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(20, 20, 20, 0.65);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 50px 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
         .profile-img {
@@ -80,20 +68,18 @@
             object-fit: cover;
             border: 4px solid #ffcc00;
             margin-bottom: 20px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
         h1 {
             font-size: 38px;
             margin-bottom: 15px;
             color: #ffcc00;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
         }
         p {
             font-size: 18px;
             line-height: 1.7;
             margin-bottom: 30px;
             color: #f1f1f1;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
         }
         .cta-btn {
             display: inline-block;
@@ -106,7 +92,6 @@
             font-size: 18px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
-            cursor: pointer;
         }
         .cta-btn:hover {
             background-color: #ffdb4d;
@@ -117,7 +102,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            background: rgba(10, 10, 10, 0.9);
+            background: rgba(10, 10, 10, 0.95);
             color: #ccc;
             padding: 12px 20px;
             text-align: center;
@@ -134,8 +119,6 @@
 </head>
 <body>
 
-    <div class="hero-bg"></div>
-
     <header>
         <div class="logo">Nepal.co.il</div>
         <nav>
@@ -148,7 +131,7 @@
 
     <div class="main-container">
         <div class="card">
-            <!-- אם שם קובץ תמונת הילדה שונה אצלך ב-GitHub, עדכן כאן את השם (למשל girl.jpg או השם המדויק) -->
+            <!-- ודא ששם קובץ תמונת הילדה תואם בדיוק לשם ב-GitHub, לדוגמה girl.jpg -->
             <img src="girl.jpg" alt="ילדה בנפאל" class="profile-img">
             
             <h1>המסע הבא שלך לגג העולם</h1>
