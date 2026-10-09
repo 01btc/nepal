@@ -13,19 +13,19 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             color: #fff;
-            /* רקע כהה עדין מאוד כדי שהשולחן יבלוט בבירור */
             background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('image_77afbe.jpg') no-repeat center center fixed;
             background-size: cover;
             min-height: 100vh;
             overflow-x: hidden;
+            /* מוודא שכל הגוף מאפשר לחיצה חופשית */
+            pointer-events: auto;
         }
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 40px;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(5px);
+            background: rgba(0, 0, 0, 0.75);
             position: fixed;
             top: 0;
             width: 100%;
@@ -52,16 +52,19 @@
             text-align: center;
             position: relative;
             z-index: 10;
+            /* משחרר לחלוטין את אזור המעטפה כדי שלא יחסום קליקים ברקע */
+            pointer-events: none;
         }
-        /* חלון שקוף ומרחף שרואים דרכו את השולחן ברקע */
         .card {
-            background: rgba(15, 15, 15, 0.35);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(15, 15, 15, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 50px 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            /* מחזיר את הלחיצה רק לתוכן שבתוך הכרטיס */
+            pointer-events: auto;
         }
         .profile-img {
             width: 150px;
@@ -95,9 +98,12 @@
             text-decoration: none;
             font-size: 18px;
             box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
-            transition: transform 0.2s;
+            cursor: pointer;
+            position: relative;
+            z-index: 99;
         }
         .cta-btn:hover {
+            background-color: #ffdb4d;
             transform: scale(1.05);
         }
         .privacy-banner {
@@ -138,8 +144,7 @@
 
     <div class="main-container">
         <div class="card">
-            <!-- סמן בדיקה -->
-            <div style="background: #28a745; color: white; padding: 6px; font-weight: bold; margin-bottom: 20px; border-radius: 6px;">TEST 1 - שקיפות ועיצוב חדש</div>
+            <div style="background: #ff5722; color: white; padding: 6px; font-weight: bold; margin-bottom: 20px; border-radius: 6px;">TEST 2 - פתרון חסימת קליקים</div>
             
             <img src="girl.jpg" alt="ילדה בנפאל" class="profile-img">
             
