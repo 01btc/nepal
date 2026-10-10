@@ -21,17 +21,7 @@
             position: relative;
         }
 
-        /* שכבת הצללה עדינה מאוד כדי לשמור על החדות והעסיסיות של תמונת האוכל */
-        .page-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 1;
-            pointer-events: none;
-        }
+        /* ללא שכבת חושך - התמונה במלוא הצבעוניות והחדות המקורית שלה */
 
         .content-container {
             position: relative;
@@ -47,35 +37,36 @@
         }
 
         .site-url {
-            font-size: 44px;
+            font-size: 46px;
             font-weight: 900;
             color: #ff8800;
-            text-shadow: 0 3px 8px rgba(0,0,0,0.95);
+            text-shadow: 0 3px 10px rgba(0,0,0,0.98), 0 0 20px rgba(0,0,0,0.8);
             margin-bottom: 12px;
             letter-spacing: 1px;
         }
 
         h1 {
-            font-size: 48px;
+            font-size: 50px;
             color: #ffffff;
-            text-shadow: 0 3px 10px rgba(0,0,0,0.95);
+            text-shadow: 0 3px 12px rgba(0,0,0,0.98), 0 0 20px rgba(0,0,0,0.8);
             margin-bottom: 12px;
             font-weight: bold;
         }
 
         .subtitle {
-            font-size: 26px;
+            font-size: 28px;
             color: #f5f5f5;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.95);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.98);
             margin-bottom: 15px;
+            font-weight: bold;
         }
 
         .slogan {
-            font-size: 24px;
+            font-size: 26px;
             color: #ff9900;
             font-style: italic;
             font-weight: bold;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.95);
+            text-shadow: 0 3px 10px rgba(0,0,0,0.98);
         }
 
         .columns-section {
@@ -96,8 +87,8 @@
             font-size: 22px;
             color: #ffaa00;
             margin-bottom: 15px;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.95);
-            border-bottom: 2px solid rgba(255,170,0,0.5);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.98);
+            border-bottom: 2px solid rgba(255,170,0,0.6);
             padding-bottom: 8px;
             font-weight: bold;
         }
@@ -105,8 +96,9 @@
         .column-box p {
             font-size: 17px;
             line-height: 1.7;
-            color: #f0f0f0;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.95);
+            color: #ffffff;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.98);
+            font-weight: 500;
         }
 
         .hero-child-img {
@@ -118,7 +110,7 @@
             border: 5px solid #ff9900;
             margin: 30px auto 50px auto;
             display: block;
-            box-shadow: 0 12px 35px rgba(0,0,0,0.9);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.95);
         }
 
         .central-text-box {
@@ -128,11 +120,11 @@
         }
 
         .central-text-box h2 {
-            font-size: 32px;
+            font-size: 34px;
             color: #ffaa00;
             margin-bottom: 20px;
             text-align: center;
-            text-shadow: 0 3px 8px rgba(0,0,0,0.95);
+            text-shadow: 0 3px 10px rgba(0,0,0,0.98);
             font-weight: bold;
         }
 
@@ -140,15 +132,16 @@
             font-size: 18px;
             line-height: 1.9;
             color: #ffffff;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.95);
+            text-shadow: 0 2px 7px rgba(0,0,0,0.98);
             margin-bottom: 15px;
+            font-weight: 500;
         }
 
         .footer-signature {
             font-size: 16px;
-            color: #e0e0e0;
+            color: #ffffff;
             margin-top: 40px;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.95);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.98);
             font-weight: bold;
         }
 
@@ -166,8 +159,6 @@
     </style>
 </head>
 <body>
-
-    <div class="page-overlay"></div>
 
     <div class="content-container">
         
