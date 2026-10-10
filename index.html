@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>נפאל - חברת טיולים ומדריכים למטייל</title>
     <style>
-        /* איפוס בסיסי וניקיון מוחלט של אלמנטים */
         * {
             margin: 0;
             padding: 0;
@@ -23,7 +22,6 @@
             position: relative;
         }
 
-        /* שכבת רקע קבועה שלא חוסמת שום אינטראקציה עכברית */
         .page-background {
             position: fixed;
             top: 0;
@@ -35,19 +33,17 @@
             pointer-events: none;
         }
 
-        /* שכבת הצללה עדינה מעל הרקע לקריאות מושלמת של הטקסט */
         .page-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.45);
             z-index: -1;
             pointer-events: none;
         }
 
-        /* תפריט ניווט עליון נגיש ולחיץ */
         header {
             width: 100%;
             display: flex;
@@ -56,9 +52,10 @@
             padding: 20px 40px;
             background: rgba(0, 0, 0, 0.85);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 100;
+            left: 0;
+            z-index: 1000;
         }
 
         .logo {
@@ -84,19 +81,19 @@
             color: #ffcc00;
         }
 
-        /* אזור התוכן המרכזי */
         main {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 40px 20px;
+            padding: 140px 20px 60px 20px;
+            width: 100%;
         }
 
         .hero-card {
-            background: rgba(20, 20, 20, 0.65);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            background: rgba(20, 20, 20, 0.45);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 20px;
             padding: 50px 30px;
@@ -151,15 +148,18 @@
             box-shadow: 0 6px 20px rgba(255, 204, 0, 0.6);
         }
 
-        /* באנר עוגיות / פרטיות תחתון */
         .privacy-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
             background: rgba(10, 10, 10, 0.95);
             color: #b0b0b0;
             padding: 12px 20px;
             text-align: center;
             font-size: 14px;
             border-top: 1px solid #333;
-            z-index: 90;
+            z-index: 900;
         }
 
         .privacy-banner a {
@@ -168,15 +168,15 @@
             margin-right: 8px;
         }
 
-        /* רספונסיביות למובייל */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
                 gap: 15px;
                 padding: 15px;
+                position: relative;
             }
-            nav {
-                gap: 15px;
+            main {
+                padding-top: 40px;
             }
             h1 {
                 font-size: 28px;
@@ -189,11 +189,9 @@
 </head>
 <body>
 
-    <!-- תמונת רקע מדויקת ברמת ה-DOM -->
     <img src="image_77afbe.jpg" alt="רקע שולחן" class="page-background">
     <div class="page-overlay"></div>
 
-    <!-- תפריט עליון -->
     <header>
         <a href="#" class="logo">Nepal.co.il</a>
         <nav>
@@ -204,9 +202,18 @@
         </nav>
     </header>
 
-    <!-- תוכן עיקרי של האתר -->
-    main>
+    <main>
         <div class="hero-card">
             <img src="girl.jpg" alt="ילדה בנפאל" class="profile-img">
             <h1>המסע הבא שלך לגג העולם</h1>
             <p>ברוכים הבאים לבית של המטיילים הישראלים בנפאל. אנחנו מציעים חוויות טיול אותנטיות, מסלולי טרקים מובילים באנאפורנה ובאוורסט, והדרכה מקצועית לכל אורך הדרך.</p>
+            <a href="#" class="cta-button">לכל המסלולים והטרקים</a>
+        </div>
+    </main>
+
+    <div class="privacy-banner">
+        אתר זה עושה שימוש בקובצי עוגיות בסיסיים בלבד לצורך תפעול תקין. <a href="#">מדיניות פרטיות</a>
+    </div>
+
+</body>
+</html>
