@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>נפאל - חברת טיולים ומדריכים למטייל</title>
+    <title>www.nepal.co.il - נפאל, גן העדן למטיילים</title>
     <style>
         * {
             margin: 0;
@@ -11,208 +11,237 @@
             box-sizing: border-box;
         }
 
-        body {
+        body, html {
+            width: 100%;
+            min-height: 100vh;
             font-family: Arial, Helvetica, sans-serif;
             color: #ffffff;
-            background-color: #121212;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            background-color: #111;
             overflow-x: hidden;
-            position: relative;
         }
 
+        /* תמונת הרקע שולחן אוכל */
         .page-background {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             object-fit: cover;
             z-index: -2;
             pointer-events: none;
         }
 
+        /* שכבת החושך המקורית לקריאות הטקסטים */
         .page-overlay {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.45);
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.55);
             z-index: -1;
             pointer-events: none;
         }
 
-        header {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            background: rgba(0, 0, 0, 0.85);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ffcc00;
-            text-decoration: none;
-        }
-
-        nav {
-            display: flex;
-            gap: 25px;
-        }
-
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 16px;
-            transition: color 0.2s ease;
-        }
-
-        nav a:hover {
-            color: #ffcc00;
-        }
-
-        main {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 140px 20px 60px 20px;
-            width: 100%;
-        }
-
-        .hero-card {
-            background: rgba(20, 20, 20, 0.45);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 50px 30px;
-            max-width: 750px;
-            width: 100%;
+        /* מעטפת התוכן המרכזית */
+        .content-container {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            pointer-events: auto;
         }
 
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center;
-            border: 4px solid #ffcc00;
-            margin-bottom: 25px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        /* כותרת עליונה בסגנון האתר המקורי */
+        .main-title-area {
+            margin-bottom: 50px;
+        }
+
+        .site-url {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ff9900;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
         }
 
         h1 {
-            font-size: 38px;
-            color: #ffcc00;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+            font-size: 42px;
+            color: #ffffff;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.9);
+            margin-bottom: 10px;
         }
 
-        p {
-            font-size: 18px;
-            line-height: 1.7;
+        .subtitle {
+            font-size: 24px;
             color: #f1f1f1;
-            margin-bottom: 35px;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 15px;
         }
 
-        .cta-button {
-            display: inline-block;
-            background-color: #ffcc00;
-            color: #121212;
-            padding: 15px 35px;
-            border-radius: 30px;
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
-            transition: all 0.2s ease;
+        .slogan {
+            font-size: 22px;
+            color: #ffaa00;
+            font-style: italic;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
         }
 
-        .cta-button:hover {
-            background-color: #ffdb4d;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.6);
+        /* תמונת הילד המרכזית */
+        .hero-child-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            border: 4px solid #ffaa00;
+            margin: 20px auto 40px auto;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
         }
 
-        .privacy-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            color: #b0b0b0;
-            padding: 12px 20px;
+        /* אזורי הטורים והמידע (שלושת הטורים למעלה ולמטה) */
+        .columns-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 50px;
+            text-align: right;
+            flex-wrap: wrap;
+        }
+
+        .column-box {
+            flex: 1;
+            min-width: 280px;
+            padding: 20px;
+        }
+
+        .column-box h3 {
+            font-size: 20px;
+            color: #ffaa00;
+            margin-bottom: 15px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+            border-bottom: 1px solid rgba(255,170,0,0.3);
+            padding-bottom: 5px;
+        }
+
+        .column-box p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #e2e2e2;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+        }
+
+        /* פסקה מרכזית ארוכה */
+        .central-text-box {
+            background: rgba(0, 0, 0, 0.35);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            text-align: right;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .central-text-box h2 {
+            font-size: 24px;
+            color: #ffaa00;
+            margin-bottom: 15px;
             text-align: center;
-            font-size: 14px;
-            border-top: 1px solid #333;
-            z-index: 900;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
         }
 
-        .privacy-banner a {
-            color: #ffcc00;
-            text-decoration: underline;
-            margin-right: 8px;
+        .central-text-box p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #f1f1f1;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+        }
+
+        .footer-signature {
+            font-size: 15px;
+            color: #cccccc;
+            margin-top: 30px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
         }
 
         @media (max-width: 768px) {
-            header {
+            .columns-section {
                 flex-direction: column;
-                gap: 15px;
-                padding: 15px;
-                position: relative;
-            }
-            main {
-                padding-top: 40px;
             }
             h1 {
-                font-size: 28px;
+                font-size: 30px;
             }
-            .hero-card {
-                padding: 30px 15px;
+            .site-url {
+                font-size: 28px;
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- תמונת הרקע והצללה -->
     <img src="image_77afbe.jpg" alt="רקע שולחן" class="page-background">
     <div class="page-overlay"></div>
 
-    <header>
-        <a href="#" class="logo">Nepal.co.il</a>
-        <nav>
-            <a href="#">דף הבית</a>
-            <a href="#">טרקים ומסלולים</a>
-            <a href="#">אודותינו</a>
-            <a href="#">צור קשר</a>
-        </nav>
-    </header>
-
-    <main>
-        <div class="hero-card">
-            <img src="girl.jpg" alt="ילדה בנפאל" class="profile-img">
-            <h1>המסע הבא שלך לגג העולם</h1>
-            <p>ברוכים הבאים לבית של המטיילים הישראלים בנפאל. אנחנו מציעים חוויות טיול אותנטיות, מסלולי טרקים מובילים באנאפורנה ובאוורסט, והדרכה מקצועית לכל אורך הדרך.</p>
-            <a href="#" class="cta-button">לכל המסלולים והטרקים</a>
+    <div class="content-container">
+        
+        <!-- כותרת ראשית -->
+        <div class="main-title-area">
+            <div class="site-url">www.nepal.co.il</div>
+            <h1>נפאל , גן העדן למטיילים</h1>
+            <div class="subtitle">בחסות פלייאיסט נפאל</div>
+            <div class="slogan">שירות, של מחלקה ראשונה - מחיר, הכי טוב בעיר.</div>
         </div>
-    </main>
 
-    <div class="privacy-banner">
-        אתר זה עושה שימוש בקובצי עוגיות בסיסיים בלבד לצורך תפעול תקין. <a href="#">מדיניות פרטיות</a>
+        <!-- שלישיית טורים עליונה -->
+        <div class="columns-section">
+            <div class="column-box">
+                <h3>טרקים ואטרקציות</h3>
+                <p>הטיול הוא השמיית כמה כיף ניתן לעשות בנפאל. מצאו לכם מגוון אטרקציות ואפשרות טיולים לקבלת מידע חיוני אתר, חוללו להעסיק לקרואת וואטסאפ מקומית של ישראלים המטילים בנפאל.</p>
+            </div>
+            <div class="column-box">
+                <h3>לינה ומזון</h3>
+                <p>ישנן אפשרויות לינה רבות בנפאל, ממלונות, גסט האוזות, ועד מלונות פאר אוהלים. ניתן למצוא אתר ונוות לינה, שמשאירים עבור כנו באמצעות האיטרופות לקרואת ווסטאפ מקומית של מטיילים ישראלים בנפאל.</p>
+            </div>
+            <div class="column-box">
+                <h3>טיפוס הרים אנפורנה והאוורסט</h3>
+                <p>על שיירות למטפסים ומטיילים מקצועיים לא מוותרים ובטח לא מתפשרים. קבלו ייעוץ והכוונה, בטוח בנוגע ואת המודיעין המדויק ביותר והשירות המעולה של פלייאיסט שיויע כבר שרות רכול נפאל.</p>
+            </div>
+        </div>
+
+        <!-- תמונת הילד במרכז -->
+        <img src="girl.jpg" alt="ילד בנפאל" class="hero-child-img">
+
+        <!-- אזור טקסט ארוך מרכזי -->
+        <div class="central-text-box">
+            <h2>נפאל כמו שלא ראית מעולם</h2>
+            <p>* מנוסח בלשון זכר ומתייחס לנשים ולגברים כאחד.</p>
+            <p>טיול הרבה אחרי הצבא, לניילאי 40 פלוס / 50 פלוס / 60 פלוס ולמי שצעיר בנפשות / עם הפינוקים שנפאל יודעת לתת / נפאל כמו שלא ראית מעולם / רוחשים, טעימים, ריחות, צבעים והנאות / מתחילים באיסוף של כבוד משדה התעופה ומכאן, אנחנו יחד / עם ג'יפ מפואר וממוזג לאורך הטיול / חדרים נקיים, מאובזרים, ממוזגים ומפנקים, כדי שתוכל לישון טוב בלילה / צוות מקצועי ואמין שדאג שהטיול הזה יהיה חויה בלתי נשכחת / שף פרטי, כי הצבא צועד על כבתו / צלם מקצועי, כדי שלא תפספס את הרגע. את הסלפי תשאירו לנו ולכם נשאר רק להנות / חליפה לפי מידתך, בונים את הטיול לפי התקציב והדרישות שלך / ייעוץ מקצועי לכל אורך הטיול עוד הפתעות ואטרקציות מונגשות למידותיך, כדי שלא תפספס אף פעימה / מסוק לראש ההר / רפטינג / ספארי / ראפטינג / ועוד ברכותיו ואטרקציות מיוחדות לכל עונות השנה.</p>
+        </div>
+
+        <!-- שלישיית טורים תחתונה (בהתאם למקור) -->
+        <div class="columns-section">
+            <div class="column-box">
+                <h3>סיפור דרך - טראק הלנגטנג</h3>
+                <p>מסלול הלנגטנג הינו מסלול מדהים על רכס הר ההימלאיה, החושף אותנו במספר ימים מועט לנו רב גווני קאשיה, קשה במיוחד במספר ימים מועט לנו רב גווני קאשיה, יערות טחוס ירוקים, הררות עוצמתיות וחזקים, פסגת מושלגות, כפרים אותנטיים ואנשים רוחביים שחיים פשוטים ושלמים. המסלול נמצא כולו בעמק הלנגטנג - עמק נמרי השלג, שבו ישנם פרפרים, ציפורים ומגוון חיות עצום ייחודי לאזור לד. רוסוף, לאורך המסלול ועבור דרך כפרים הופגעו בשנת 2015, וביניהם הגפר לננגטנג - כפר הנקבר כולו מתחת סולות סלעים ושלג וכעת נבנה מחדש ומנסה לאחות את השברים מהסערדריה. משך הטיול: 8 ימים. דרגת קושי: המסלול בדרגת קושי בינונית. מתאים לחוב - המטיילים ולמשפחות.</p>
+            </div>
+            <div class="column-box">
+                <h3>סיפור דרך - טראק האגמים הקפואים</h3>
+                <p>טראק האגמים הקפואים הינו אחד הטראקים המיוחדים ביותר בנפאל - בזמן קצץ מאוז ורגע קושי פשוטו, ביטוח להתאפקות אחרי על רכס הר ההימלאיה אנחנו נחשפים לחופים ולמסוע העשמתי של רפאל על כל גווניו - יערות ירוקים, אגמים גדולים מדהימים, פסגות והרים לבנים, כפרים אותנטיים ואנשים רוחניים ושמחים. טראק מומלץ ביותר למשפחות ולמטיילים בכל הרמות הרוצים לחוות את נפאל והרי ההימלאיה בזמן קצר יחסית. משך הטיול: 7 ימים. דרגת קושי: המסלול בדרגת קושי בינונית. מתאים לרובי המטיילים ולמשפחות.</p>
+            </div>
+            <div class="column-box">
+                <h3>סיפור הריפם אנפורנה והאוורסט</h3>
+                <p>על שיירות הירם אנפורנה והאוורסט על שירו את למטפסים ומטיילים מקצועיים לא מוותרים ובטח לא מתפשרים קבלו ייעוץ והכוונה, בטוח בנוגע ואת המודיעין המדויק ביותר והשירות המעולה של פלייאיסט שיוע כבר שרות רכול נפאל משך הטיול: 12 ימים. דרגת קושי: המסלול מתמשך ובדרגת קושי בינונית. בהחלט מתאים לדור המטיילים ולמשפחות.</p>
+            </div>
+        </div>
+
+        <div class="footer-signature">
+            Elad Kim 2024
+        </div>
+
     </div>
 
 </body>
