@@ -21,128 +21,118 @@
             position: relative;
         }
 
-        /* ללא שכבת חושך - התמונה במלוא הצבעוניות והחדות המקורית שלה */
-
         .content-container {
             position: relative;
             z-index: 10;
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 50px 20px;
             text-align: center;
         }
 
         .main-title-area {
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .site-url {
-            font-size: 46px;
-            font-weight: 900;
-            color: #ff8800;
-            text-shadow: 0 3px 10px rgba(0,0,0,0.98), 0 0 20px rgba(0,0,0,0.8);
-            margin-bottom: 12px;
+            font-size: 52px;
+            font-weight: bold;
+            color: #ff9900;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.98);
+            margin-bottom: 10px;
             letter-spacing: 1px;
         }
 
         h1 {
-            font-size: 50px;
+            font-size: 46px;
             color: #ffffff;
-            text-shadow: 0 3px 12px rgba(0,0,0,0.98), 0 0 20px rgba(0,0,0,0.8);
-            margin-bottom: 12px;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.98);
+            margin-bottom: 8px;
             font-weight: bold;
         }
 
         .subtitle {
-            font-size: 28px;
+            font-size: 24px;
             color: #f5f5f5;
             text-shadow: 0 2px 8px rgba(0,0,0,0.98);
-            margin-bottom: 15px;
-            font-weight: bold;
+            margin-bottom: 10px;
         }
 
         .slogan {
-            font-size: 26px;
+            font-size: 24px;
             color: #ff9900;
             font-style: italic;
-            font-weight: bold;
-            text-shadow: 0 3px 10px rgba(0,0,0,0.98);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.98);
         }
 
         .columns-section {
             display: flex;
             justify-content: space-between;
-            gap: 40px;
-            margin-bottom: 60px;
+            gap: 30px;
+            margin-bottom: 40px;
             text-align: right;
             flex-wrap: wrap;
         }
 
         .column-box {
             flex: 1;
-            min-width: 300px;
+            min-width: 320px;
         }
 
         .column-box h3 {
-            font-size: 22px;
-            color: #ffaa00;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.98);
-            border-bottom: 2px solid rgba(255,170,0,0.6);
-            padding-bottom: 8px;
+            font-size: 20px;
+            color: #ff9900;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.98);
             font-weight: bold;
         }
 
         .column-box p {
-            font-size: 17px;
-            line-height: 1.7;
+            font-size: 15px;
+            line-height: 1.6;
             color: #ffffff;
             text-shadow: 0 2px 6px rgba(0,0,0,0.98);
-            font-weight: 500;
         }
 
+        /* תמונת הילד המקורית בגודל מלא וטבעי ללא חיתוך עיגול */
         .hero-child-img {
-            width: 240px;
-            height: 240px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center;
-            border: 5px solid #ff9900;
-            margin: 30px auto 50px auto;
+            width: 350px;
+            height: auto;
+            border-radius: 20px;
+            object-fit: contain;
+            margin: 20px auto 30px auto;
             display: block;
-            box-shadow: 0 12px 35px rgba(0,0,0,0.95);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.9);
         }
 
         .central-text-box {
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             text-align: right;
-            padding: 0 20px;
+            padding: 0 10px;
         }
 
         .central-text-box h2 {
-            font-size: 34px;
-            color: #ffaa00;
-            margin-bottom: 20px;
+            font-size: 30px;
+            color: #ff9900;
+            margin-bottom: 15px;
             text-align: center;
-            text-shadow: 0 3px 10px rgba(0,0,0,0.98);
+            text-shadow: 0 3px 8px rgba(0,0,0,0.98);
             font-weight: bold;
         }
 
         .central-text-box p {
-            font-size: 18px;
-            line-height: 1.9;
+            font-size: 16px;
+            line-height: 1.8;
             color: #ffffff;
-            text-shadow: 0 2px 7px rgba(0,0,0,0.98);
-            margin-bottom: 15px;
-            font-weight: 500;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.98);
+            margin-bottom: 12px;
         }
 
         .footer-signature {
-            font-size: 16px;
+            font-size: 15px;
             color: #ffffff;
-            margin-top: 40px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.98);
-            font-weight: bold;
+            margin-top: 30px;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.98);
         }
 
         @media (max-width: 768px) {
@@ -150,10 +140,13 @@
                 flex-direction: column;
             }
             h1 {
-                font-size: 34px;
+                font-size: 32px;
             }
             .site-url {
-                font-size: 32px;
+                font-size: 36px;
+            }
+            .hero-child-img {
+                width: 260px;
             }
         }
     </style>
@@ -184,11 +177,11 @@
             </div>
         </div>
 
-        <img src="girl.jpg" alt="ילדה בנפאל" class="hero-child-img">
+        <img src="girl.jpg" alt="ילד בנפאל" class="hero-child-img">
 
         <div class="central-text-box">
             <h2>נפאל כמו שלא ראית מעולם</h2>
-            <p style="text-align: center; color: #ffaa00; margin-bottom: 15px; font-weight: bold;">* מנוסח בלשון זכר ומתייחס לנשים ולגברים כאחד.</p>
+            <p style="text-align: center; color: #ff9900; margin-bottom: 12px; font-weight: bold;">* מנוסח בלשון זכר ומתייחס לנשים ולגברים כאחד.</p>
             <p>טיול הרבה אחרי הצבא, לניילאי 40 פלוס / 50 פלוס / 60 פלוס ולמי שצעיר בנפשות / עם הפינוקים שנפאל יודעת לתת / נפאל כמו שלא ראית מעולם / רוחשים, טעימים, ריחות, צבעים והנאות / מתחילים באיסוף של כבוד משדה התעופה ומכאן, אנחנו יחד / עם ג'יפ מפואר וממוזג לאורך הטיול / חדרים נקיים, מאובזרים, ממוזגים ומפנקים, כדי שתוכל לישון טוב בלילה / צוות מקצועי ואמין שדאג שהטיול הזה יהיה חויה בלתי נשכחת / שף פרטי, כי הצבא צועד על כבתו / צלם מקצועי, כדי שלא תפספס את הרגע. את הסלפי תשאירו לנו ולכם נשאר רק להנות / חליפה לפי מידתך, בונים את הטיול לפי התקציב והדרישות שלך / ייעוץ מקצועי לכל אורך הטיול עוד הפתעות ואטרקציות מונגשות למידותיך, כדי שלא תפספס אף פעימה / מסוק לראש ההר / רפטינג / ספארי / ראפטינג / ועוד ברכותיו ואטרקציות מיוחדות לכל עונות השנה.</p>
         </div>
 
@@ -199,19 +192,4 @@
             </div>
             <div class="column-box">
                 <h3>סיפור דרך - טראק האגמים הקפואים</h3>
-                <p>טראק האגמים הקפואים הינו אחד הטראקים המיוחדים ביותר בנפאל - בזמן קצץ מאוז ורגע קושי פשוטו, ביטוח להתאפקות אחרי על רכס הר ההימלאיה אנחנו נחשפים לחופים ולמסוע העשמתי של רפאל על כל גווניו - יערות ירוקים, אגמים גדולים מדהימים, פסגות והרים לבנים, כפרים אותנטיים ואנשים רוחניים ושמחים. טראק מומלץ ביותר למשפחות ולמטיילים בכל הרמות הרוצים לחוות את נפאל והרי ההימלאיה בזמן קצר יחסית. משך הטיול: 7 ימים. דרגת קושי: המסלול בדרגת קושי בינונית. מתאים לרובי המטיילים ולמשפחות.</p>
-            </div>
-            <div class="column-box">
-                <h3>סיפור הריפם אנפורנה והאוורסט</h3>
-                <p>על שיירות הירם אנפורנה והאוורסט על שירו את למטפסים ומטיילים מקצועיים לא מוותרים ובטח לא מתפשרים קבלו ייעוץ והכוונה, בטוח בנוגע ואת המודיעין המדויק ביותר והשירות המעולה של פלייאיסט שיוע כבר שרות רכול נפאל משך הטיול: 12 ימים. דרגת קושי: המסלול מתמשך ובדרגת קושי בינונית. בהחלט מתאים לדור המטיילים ולמשפחות.</p>
-            </div>
-        </div>
-
-        <div class="footer-signature">
-            Elad Kim 2026
-        </div>
-
-    </div>
-
-</body>
-</html>
+                <p>טראק האגמים הקפואים הינו אחד הטראקים המיוחדים ביותר בנפאל - בזמן קצץ מאוז ורגע קושי פשוטו, ביטוח להתאפקות אחרי על רכס הר ההימלאיה אנחנו נחשפים לחופים ולמסוע העשמתי של רפאל על כל גווניו - יערות ירוקים, אגמים גדולים מדהימים, פסגות והרים לבנים, כפרים אותנטיים ואנשים רוחניים וש
